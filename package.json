@@ -12,8 +12,13 @@
   "engines": {
     "node": "6.11.1"
   },
-  "repository" :{
-    "type" : "git",
-    "url" : "https://github.com/Mugiwaranojo/monserveurweb.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mugiwaranojo/monserveurweb.git"
+  },
+  "dependencies": {
+    "exec": "0.2.1",
+    "express": "4.15.3",
+    "socket.io": "2.0.3"
   }
 }

@@ -1,0 +1,22 @@
+<!doctype html>  
+<html lang="fr">  
+    <head>
+		<title>MonServeurWeb</title>
+    </head>
+    <body>
+        <h1>MonServeurWeb</h1>
+        <div id="infoServeur"></div>
+		
+		<script src="/socket.io/socket.io.js"></script>
+		<script>  
+		 var socket = io.connect('http://172.16.32.148:8080');
+		 socket.on('connect', function(data) {
+			socket.emit('join', 'Hello World from client');
+		 });
+		 
+		 socket.on('serverInfo', function(data) {
+			document.getElementById("infoServeur").innerHTML +=data;
+		 });
+		</script>  
+    </body>
+</html>
