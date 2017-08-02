@@ -5,7 +5,7 @@ var io = require('socket.io')(server);
 var infosystem = require("./src/infosystem")
 
 app.use(express.static(__dirname + '/node_modules'));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res,next) {  
     res.sendFile(__dirname + '/public/index.html');
 });
