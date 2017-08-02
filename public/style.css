@@ -1,0 +1,27 @@
+h2{
+    text-align: center;
+}
+
+.row {
+    padding: 5px;
+}
+
+
+#unixVersion{
+    text-align: center;
+    color: green;
+}
+
+#serverInfo {
+    height: 100px;
+    overflow: auto;
+	color: blueviolet;
+}
+
+#serverProcessus {
+    height: 100px;
+    overflow: auto;
+	color: blue;
+	overflow-x: hidden;
+}
+
