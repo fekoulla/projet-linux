@@ -2,11 +2,12 @@ var express = require('express');
 var app = express();  
 var server = require('http').createServer(app);  
 var io = require('socket.io')(server);
-var exec = require('exec');
+var infosystem = require("./src/infosystem")
 
-app.use(express.static(__dirname + '/node_modules'));  
+app.use(express.static(__dirname + '/node_modules'));
+app.use(express.static('public'));
 app.get('/', function(req, res,next) {  
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 server.listen(8080, function(){
@@ -19,11 +20,8 @@ io.on('connection', function(client) {
 	client.on('join', function(data) {
 		console.log(data);
 		
-		exec(['uname', '-a'], function(err, out, code) {
-			if (err instanceof Error)
-				throw err;
-			client.emit("serverInfo", out);
-		});
-		
+		var info = new infosystem(client);
+		info.sendUnixVersion();
+		info.sendServerInfo();
 	});
 });
