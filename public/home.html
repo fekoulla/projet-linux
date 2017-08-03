@@ -1,0 +1,84 @@
+
+<!doctype html>  
+<html lang="fr">  
+    <head>
+		<title>MonServeurWeb</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <h2>MonServeurWeb</h2>
+
+	<ul class="nav nav-tabs">
+  		<li class="active"><a href="#tab1" data-toggle="tab">Home</a></li>
+  		<li><a href="#tab2" data-toggle="tab">Utilisateurs</a></li>
+  		<li><a href="#tab3" data-toggle="tab">Groupes</a></li>
+  		<li><a href="#tab4" data-toggle="tab">Gestion de projet</a></li>
+	</ul>	
+
+
+		<div class="tab-content">
+			<div class="tab-pane active" id="tab1">
+				<div class="row">
+					<div id="unixVersion"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-10 col-lg-6">
+						<div class="panel panel-default">
+							<div class="panel-body"><div id="serverInfo"></div></div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-12 col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-body"><div id="serverProcessus"></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-pane" id="tab2">
+
+			        <form style="padding:20px;">
+	<h2>Création d'un utilisateur</h2>
+  <div class="form-group">
+    <label for="identifaint">Identifiant</label>
+    <input type="text" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Mot de passe</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="form-group">
+	<label for="groupe">Ajouter à un groupe</label>
+	<input type="text" class="form-control" id="id">
+  </div>
+  <button type="submit" class="btn btn-default">Soumettre</button>
+</form>
+			</div>
+
+
+			<div class="tab-pane" id="tab3">
+
+			<form style="padding:20px;">
+	<h2>Création d'un groupe</h2>
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" class="form-control" id="email">
+  </div>
+  <button type="submit" class="btn btn-default">Soumettre</button>
+</form>
+
+		 	</div>
+
+
+
+
+		</div>
+
+		
+		<script src="/jquery/dist/jquery.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/js/script.js"></script>
+    </body>
+</html>
