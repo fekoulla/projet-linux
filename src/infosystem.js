@@ -4,6 +4,16 @@ function InfoSystem(socketClient){
 	this.socketClient= socketClient;
 };
 
+InfoSystem.checkUserPassword= function(username, password, callback){
+	exec([__dirname+'/../batch/checkpassword.bash', username, password], function(err, out, code) {
+		if (err instanceof Error){
+			console.log(err);
+			throw err;
+		}
+		callback("ok");
+	});
+}
+
 InfoSystem.prototype.sendUnixVersion = function(){
 	var client = this.socketClient;
 	exec(['uname', '-a'], function(err, out, code) {
